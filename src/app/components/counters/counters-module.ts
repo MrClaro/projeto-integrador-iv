@@ -3,11 +3,10 @@ import { CommonModule } from "@angular/common";
 
 import { CountersRoutingModule } from "./counters-routing-module";
 import { Button } from "./button/button";
-import { Counter } from "./counter/counter";
 
 @NgModule({
-	declarations: [Button, Counter],
+	declarations: [Button],
 	imports: [CommonModule, CountersRoutingModule],
-	exports: [Button, Counter],
+	exports: [Button],
 })
 export class CountersModule {}
