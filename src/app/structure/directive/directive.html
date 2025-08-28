@@ -1,0 +1,24 @@
+<h2>Lista de Alunos e Status</h2>
+
+<button (click)="toggleVisibility()">
+  {{ isVisible ? 'Ocultar Lista' : 'Mostrar Lista' }}
+</button>
+
+<!-- TODO: Ver nova implementação do ngFor -->
+<ul *ngIf="isVisible">
+  <li
+    *ngFor="let aluno of alunos"
+    [ngClass]="{ ativo: aluno.ativo, inativo: !aluno.ativo }"
+    [ngStyle]="{ 'font-size.px': fontSize }"
+  >
+    {{ aluno.id }} - {{ aluno.nome }}
+    <span class="status">({{ aluno.ativo ? 'Ativo' : 'Inativo' }})</span>
+  </li>
+</ul>
+
+<!-- TODO: Ver nova implementação do ngIf -->
+<div class="font-controls" *ngIf="isVisible">
+  <button (click)="decreaseFontSize()">-</button>
+  <span>Tamanho da fonte: {{ fontSize }}px</span>
+  <button (click)="increaseFontSize()">+</button>
+</div>
